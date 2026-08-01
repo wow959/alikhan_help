@@ -460,9 +460,6 @@ function copyField(id, btn){
     btn.classList.add('copied');
     setTimeout(()=>{ btn.innerText = original; btn.classList.remove('copied'); }, 1800);
   };
-  if (typeof fbq === 'function'){
-    fbq('trackCustom', 'CopyRequisite', { field: id });
-  }
   if (navigator.clipboard && window.isSecureContext){
     navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
   } else {
